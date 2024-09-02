@@ -1,0 +1,33 @@
+/* Seperating out hover code which is only meant to add the feeling of functionality since this is not a full project */
+.nav li:hover{
+    color: orange;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;}
+.project-card:hover{
+    border-color: blue;
+    /* box-shadow: 0px 10px 20px -20px black; */
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.card-footer a:hover{
+    color: blue;
+}
+.header-btn:hover{
+    color:#1e293b;
+    background-color: #2564eb50 ;
+}
+.portrait:hover {
+    border: 2px solid orange;
+}
+.mdi-bell-ring-outline:hover{
+    /* background-color: orange; */
+    border: 2px solid orange;
+    padding: 2px;
+}
+.user-actions-container a:hover{
+    text-decoration: underline;
+}
+.trending-card:hover{
+    /* box-shadow: rgba(0, 0, 0, 0.5) 1.95px 1.95px 2.6px; */
+    border: 2px solid black;
+    padding-left: 8px;
+}
+

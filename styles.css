@@ -1,0 +1,301 @@
+*{
+ padding: 0;   
+ margin:0;
+ list-style: none;
+ box-sizing: border-box;
+ /* border-box gives the desired padding effect*/
+}
+a{
+    all:unset;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+.portrait
+,.mdi-bell-ring-outline{
+    border-radius: 50%;
+}
+
+.large{
+    height: 4rem;
+    border: 2px solid #2563eb;
+}
+.normal{
+    height: 2rem;
+}
+/* *********** */
+/* TOP LEVEL   */
+/* *********** */
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    'Nav Header' 
+    'Nav Main';
+    grid-template-rows: 1fr 6fr;
+    grid-template-columns: minmax(auto-fit, 0.8fr) 5fr;
+}
+.nav{
+    grid-area: Nav;
+    background-color: #2563eb;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    /* padding-right: 60px; */
+    color: #fff;
+    text-wrap: nowrap;
+}
+.header{
+    grid-area: Header;
+    background-color: #f1f5f9;
+    box-shadow: 0px 10px 20px -20px black;
+}
+.main{
+    grid-area: Main;
+    background-color: #71717a5e;
+}
+
+    /* *********** */
+    /* Nav section */
+    /* *********** */
+
+.nav li{
+  line-height: 2;
+}
+.nav li i{
+    margin-right: 10px;
+}
+.links
+,.misc{
+    font-size: 22px;
+}
+
+    /* *********** */
+    /* Header section */
+    /* *********** */
+.header{
+    display: grid;
+    grid-template-areas: 
+    'TOPLEFT TOPRIGHT'
+    'BOTLEFT BOTRIGHT';
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 2fr 3fr;
+    font-size: 22px;
+    align-items: center;
+    padding-bottom: 1rem;
+
+}
+/****************************************************** left */
+.search-container
+,.left-user-container {
+    margin-left: 20px;
+}
+.search-container{
+    grid-area: TOPLEFT;
+    display: flex;
+}
+.searchbar{
+    width: 200px;
+    flex-grow: 1;
+    height: 2em;
+    border: none;
+    background-color: #71717a5e;
+    margin-left: 10px;
+    border-radius: 12px;
+    text-align: right;
+    padding-right:20px ;
+}
+.left-user-container{
+    grid-area: BOTLEFT;
+}
+.left-user-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.greeting-container{
+    margin-left: 10px;
+}
+
+
+
+/****************************************************** right */
+.user-actions-container
+,.header-buttons {
+    text-align: right;
+    padding-right: 50px;
+}
+.user-actions-container{
+    grid-area: TOPRIGHT;
+}
+.user-actions-container{
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    /* background-color: orange; */
+    gap: 1em;
+}
+.bolder{
+    font-weight: bolder;
+}
+.header-buttons{
+    grid-area: BOTRIGHT;
+}
+.header-btn{
+    background-color: #2563eb;
+    color: #fafaf9;
+    border: none;
+    border-radius: 16px;
+    margin-left: 20px;
+    padding: 8px;
+    width: 100px;
+}
+
+    /* *********** */
+    /* Main section */
+    /* *********** */
+.main{
+    display: grid;
+    grid-template-areas: 
+    'Projects Announcements'
+    'Projects Trending';
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 50% 48%;
+    overflow-y: scroll;
+}
+
+.projects{
+    grid-area: Projects;
+}
+
+.announcements{
+    grid-area: Announcements;
+}
+.trending{
+    grid-area: Trending;
+}
+.projects
+,.announcements
+,.trending{
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+
+    /* *********** */
+    /* Projects section */
+    /* *********** */
+.projects{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 10px repeat(3,30%);
+    grid-auto-rows: 30%;
+    gap: 20px;
+}
+
+.projects > h3{
+    grid-column: 1/3;
+}
+.project-card{
+    border-radius: 8px;
+    border-left: 0.8em solid orange;  
+    background-color: #fff;
+}
+.project-card>p{
+    flex: 0 1 150px;
+    color: rgb(104, 104, 104);
+    overflow-y:scroll;
+}
+
+.card-footer {
+    display: flex;
+    gap: 20px;
+    font-size: 2rem;
+    justify-content: right;
+    align-items: end;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card{ 
+    padding:20px 10px 0px; 
+    display: flex;
+    overflow: scroll;
+    flex-direction: column;
+    /* do not put background color on this. the accordian is set up with cards inside. the elements need their own background assignments */
+}
+
+    /* *********** */
+    /* Announcements section */
+    /* *********** */
+
+.announcements{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.announcements>h4{
+    height: 10px;
+}
+.announcement-accordian{
+    /* background-color: blueviolet; */
+    background-color: #fff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.announcement-card{
+    flex: 1;
+    display: flex;
+    box-shadow: 0px 24px 3px -24px black;
+}
+.announcement-accordian>.announcement-card{
+    padding-top: 10px;
+}
+
+.announcement-card p {
+    margin-top: 0.2rem;
+    /* background-color:blue; */
+    color: rgb(110, 110, 110);
+    height: 50px;
+    overflow-y: scroll;
+}
+
+    /* *********** */
+    /* Trending section */
+    /* *********** */
+
+
+    .trending>h4{
+        height: 10px;
+    }
+    .trending-container{
+        /* background-color: blueviolet; */
+        background-color: #fff;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        padding: 20px;
+        gap:1rem;
+    }
+    
+    .trending-card{
+        /* background-color: blueviolet; */
+        flex: 1;
+        display: flex;
+        padding-top: 0.5rem;
+    }
+
+    .user-container{
+        padding: 1rem;
+        /* background-color: blue; */
+    }
